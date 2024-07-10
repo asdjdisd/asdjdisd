@@ -20,5 +20,5 @@ class Solution {
         boolean[] check=new boolean[dungeons.length];
         dfs(k,dungeons,check,0);
         return answer;
-    }
+    } 
 }
