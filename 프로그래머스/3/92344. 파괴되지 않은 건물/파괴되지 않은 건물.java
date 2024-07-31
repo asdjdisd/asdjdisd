@@ -3,25 +3,23 @@ class Solution {
     public int solution(int[][] board, int[][] skill) {
         int answer = 0;
         int check=0;
-        int[][] num=new int[board.length][board[0].length];
+        int[][] num=new int[board.length+1][board[0].length+1];
         for(int q=0;q<skill.length;q++)
         {
             if(skill[q][0]==1)
                 check=-1;
             else
                 check=1;
+            
             int a=skill[q][1];
             int b=skill[q][2];
             int c=skill[q][3]+1;
             int d=skill[q][4]+1;
             
             num[a][b]+=check*skill[q][5];
-            if(c<board.length)
-                num[c][b]+=check*skill[q][5]*-1;
-            if(d<board[0].length)
-                num[a][d]+=check*skill[q][5]*-1;
-            if(c<board.length&&d<board[0].length)
-                num[c][d]+=check*skill[q][5];
+            num[c][b]+=check*skill[q][5]*-1;
+            num[a][d]+=check*skill[q][5]*-1;
+            num[c][d]+=check*skill[q][5];
         }
         for(int q=0;q<num.length;q++)
         {
