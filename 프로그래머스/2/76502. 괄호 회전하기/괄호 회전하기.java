@@ -23,8 +23,7 @@ class Solution {
                     {
                         num=0;
                         break;
-                    }
-                        
+                    } 
                 }
                 else if(s.charAt(w)=='}')
                 {
