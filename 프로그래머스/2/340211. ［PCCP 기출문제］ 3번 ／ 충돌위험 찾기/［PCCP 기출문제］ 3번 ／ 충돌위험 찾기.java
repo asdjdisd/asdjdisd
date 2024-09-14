@@ -4,6 +4,7 @@ class Solution {
         int answer = 0;
         int maxx=0;
         int maxy=0;
+        int maxc=0;
         for(int q=0;q<points.length;q++)
         {
             maxx=Math.max(maxx,points[q][0]);
@@ -48,12 +49,13 @@ class Solution {
                     map[ax][ay][check]++;
                 }
             }
+            maxc=Math.max(maxc,check);
         }
         for(int q=0;q<map.length;q++)
         {
             for(int w=0;w<map[0].length;w++)
             {
-                for(int e=0;e<map[0][0].length;e++)
+                for(int e=0;e<maxc+1;e++)
                 {
                     if(map[q][w][e]>=2)
                         answer++;
